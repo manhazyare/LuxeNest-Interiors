@@ -1,0 +1,534 @@
+:root {
+    --primary-dark: #2C2C2C;
+    --secondary-accent: #D4B996;
+    --highlight-gold: #CBA135;
+    --support-light: #F8F8F8;
+    --accent-teal: #3A6B78;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F8F8F8;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+
+header {
+    position: relative;
+    background: linear-gradient(135deg,
+            rgba(44, 44, 44, 0.7),
+            /* dark overlay */
+            rgba(212, 185, 150, 0.7)
+            /* warm accent */
+        ),
+        url("https://images.pexels.com/photos/6297078/pexels-photo-6297078.jpeg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: 40px 20px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    gap: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.navbar-ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight-gold);
+    text-align: left;
+
+}
+
+.navbar-ul li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-ul li:hover {
+    color: var(--secondary-accent);
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    /* center buttons inside header */
+    gap: 15px;
+    /* space between buttons */
+    margin-top: 20px;
+}
+
+.btn {
+    background: var(--highlight-gold);
+    color: white;
+    display: inline-block;
+    border: none;
+    padding: 12px 24px;
+    margin: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+.main {
+    max-width: 1200px;
+    /* keeps content centered and not too wide */
+    margin: 0 auto;
+    /* centers the main container */
+    padding: 40px 20px;
+    /* spacing inside the main */
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* space between each section inside main */
+    background: var(--support-light);
+    /* light background from your palette */
+}
+
+.About-Us {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+#About {
+    background-image: linear-gradient(135deg,
+            rgba(212, 185, 150, 0.7),
+            rgba(203, 161, 53, 0.7)),
+        url("https://images.pexels.com/photos/12639296/pexels-photo-12639296.jpeg");
+    ;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text,
+.about-values {
+    flex: 1;
+}
+
+.Core-Values li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.Core-Values li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--highlight-gold, #CBA135);
+    font-weight: bold;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 60px 20px;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Hover Effects */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* General Portfolio Section Styling */
+.Portfolio {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Portfolio Images Grid */
+.Portfolio-image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.Portfolio-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Images */
+.Portfolio-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+#contact {
+    background-image: linear-gradient(135deg,
+            rgba(116, 214, 214, 0.7),
+            rgba(123, 150, 147, 0.7)),
+        url("https://images.pexels.com/photos/30332467/pexels-photo-30332467.jpeg");
+    ;
+}
+
+/* Contact Container: Flex Layout for larger screens */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    /* allows stacking on smaller screens */
+}
+
+
+/* Contact Details Styling */
+.contact-details {
+    flex: 1 1 45%;
+    /* roughly half of the container */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1 1 45%;
+    /* roughly half of the container */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+
+.contact-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+    outline: none;
+}
+
+/* Footer General Styling */
+footer {
+    background-color: #222;
+    color: #f9f9f9;
+    padding: 50px 20px 30px;
+    font-family: 'Arial', sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer About Section */
+.footer-about {
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+/* Footer Contact Section */
+.footer-contact {
+    margin-bottom: 30px;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/*========================
+   Responsive Adjustments
+========================*/
+
+/* Small Mobile Devices */
+@media (max-width: 600px) {
+    .Portfolio-image img {
+        height: 180px;
+    }
+
+}
+
+/* Tablets & Mobile */
+@media (max-width: 1024px) {
+
+    /* Header */
+    header {
+        padding: 30px 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar .navbar-ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    /* About Us */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-text,
+    .about-values {
+        flex: none;
+    }
+
+    /* Core Values */
+    .Core-Values li {
+        padding-left: 20px;
+        font-size: 1rem;
+    }
+
+    /* Service Section */
+    .service-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .service-card img {
+        height: 200px;
+    }
+
+    /* Show menu toggle */
+    .navbar-ul {
+        display: none;
+        /* hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgb(5, 5, 5);
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .navbar-ul.active {
+        display: flex;
+        /* shown when active */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+
+/* Medium Mobile Devices */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-details,
+    .contact-form {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
+
+/* Small Tablets & Large Phones */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .about-container {
+        gap: 20px;
+    }
+
+    .Core-Values li {
+        font-size: 0.95rem;
+    }
+
+    .service-card img {
+        height: 150px;
+    }
+}
+
+/* Footer Layout for Larger Screens */
+@media (min-width: 768px) {
+    footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-about,
+    .footer-contact {
+        flex: 1 1 45%;
+    }
+
+    .footer-bottom {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Footer Layout for Mobile */
+@media (max-width: 767px) {
+    footer {
+        text-align: center;
+    }
+
+    .footer-about,
+    .footer-contact {
+        margin-bottom: 20px;
+    }
+}
